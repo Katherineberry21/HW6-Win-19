@@ -8,7 +8,7 @@ import os
 def read_file(filename):
     """ Return a list of the lines in the file with the passed filename """
     
-    # Open the file and get the file object  hellos
+    # Open the file and get the file object  hello worlds
     source_dir = os.path.dirname(__file__) #<-- directory name
     full_path = os.path.join(source_dir, filename)
     infile = open(full_path,'r')
