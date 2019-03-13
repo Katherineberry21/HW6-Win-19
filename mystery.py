@@ -1,4 +1,4 @@
-# Name: Your Name Goes Here
+# Name: Katherine Berry
 # SI 206
 # HW6 - Regular Expressions
 
@@ -24,12 +24,22 @@ def read_file(filename):
 
             
 def find_dates(filename):
+    list_of_dates = []
+    lines = read_file(filename)
+    regex = r'\d{1,2}[.\-/]\d{1,2}[.\-/]\d+'
+    for line in lines:
+        dates = re.findall(regex, line)
+        for x in dates:
+            list_of_dates.append(x)
+    print(list_of_dates)
+    return list_of_dates
+
+
     """ Return a list of valid dates from the text file. 
     
         filename -- the name of the file to read from
         return -- the list of valid dates found in the file
     """
-    pass
     
     # initialize a list of dates to an empty list
     
@@ -47,13 +57,32 @@ def find_dates(filename):
 
 
 def find_emails(filename):
+    list_of_emails = []
+    items = read_file(filename)
+    regex2 = r'[\w\.]+@[\w\.]+'
+    for item in items:
+        emails = re.findall(regex2, item)
+        for y in emails:
+            list_of_emails.append(y)
+    print(list_of_emails)
+    return(list_of_emails)
+
     """ Return a list of valid emails in the text file with the given filename """
-    pass
+ 
 
 
 def find_phoneNumbers(filename):
+    list_of_phoneNumbers = []
+    items = read_file(filename)
+    regex3 = r'[(]?\d{3}[)]?[.\-/\s]?\d{3}[.\-/\s]?\d{4}'
+    for item in items:
+        numbers = re.findall(regex3, item)
+        for z in numbers:
+            list_of_phoneNumbers.append(z)
+    print(list_of_phoneNumbers)
+    return(list_of_phoneNumbers)
+
     """ Return a list of valid phone numbers in the text file with the given filename """
-    pass
 
 ## Extra credit
 def count_word(filename, word):
